@@ -55,7 +55,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 
 	}
 
-	public void run() {
+	public void run() { 
 
 		init();
 
@@ -63,7 +63,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		long elapsed;
 		long wait;
 
-		while (running) {
+		while (running) { //Every Frame Loop
 			
 			start = System.nanoTime();
 
@@ -72,7 +72,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			draw();
 			drawToScreen();
 			
-			if (sm.getCurrentState() == 0) {
+			if (sm.getCurrentState() == GameStateManager.LOADINGSTATE) {
 				try {
 					TimeUnit.SECONDS.sleep(3);
 				} catch (InterruptedException e) {
